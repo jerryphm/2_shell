@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "$schema": "https://raw.githubusercontent.com/phamthang03/2_shell/main/2_shell.json",
   "blocks": [
     {
       "alignment": "left",
@@ -36,41 +36,6 @@
           "style": "diamond",
           "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "type": "git"
-        }
-      ],
-      "type": "prompt"
-    },
-    {
-      "alignment": "right",
-      "segments": [
-        {
-          "foreground": "#a9ffb4",
-          "style": "plain",
-          "type": "text"
-        },
-        {
-          "foreground": "#a9ffb4",
-          "properties": {
-            "style": "dallas",
-            "threshold": 0
-          },
-          "style": "diamond",
-          "template": " {{ .FormattedMs }}s <#ffffff>\ue601</>",
-          "type": "executiontime"
-        },
-        {
-          "properties": {
-            "root_icon": "\uf292 "
-          },
-          "style": "diamond",
-          "template": " \uf0e7 ",
-          "type": "root"
-        },
-        {
-          "foreground": "#94ffa2",
-          "style": "diamond",
-          "template": " <#ffffff>MEM:</> {{ round .PhysicalPercentUsed .Precision }}% ({{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB)",
-          "type": "sysinfo"
         }
       ],
       "type": "prompt"
